@@ -1,0 +1,8 @@
+Build.PL
+lib/JavaScript/Hash.pm
+t/basic.t
+t/function.t
+MANIFEST			This list of files
+README
+Changes
+META.yml
