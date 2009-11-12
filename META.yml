@@ -1,6 +1,6 @@
 ---
 name: JavaScript-Hash
-version: 0.9.0
+version: 0.9.1
 author:
   - 'David Caldwell <david@porkrind.org>'
 abstract: Compact and cache javascript files based on the hash of their contents.
@@ -8,11 +8,13 @@ license: perl
 resources:
   license: http://dev.perl.org/licenses/
 requires:
+  File::Slurp: 0
+  JSON: 0
   JavaScript::Minifier::XS: 0
 provides:
   JavaScript::Hash:
     file: lib/JavaScript/Hash.pm
-    version: 0.9.0
+    version: 0.9.1
 generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

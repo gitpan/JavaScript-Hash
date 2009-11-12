@@ -1,12 +1,13 @@
 # Copyright (C) 2009 David Caldwell and Jim Radford, All Rights Reserved. -*- cperl -*-
 package JavaScript::Hash; use warnings; use strict;
-our $VERSION = '0.9.0';
+our $VERSION = '0.9.1';
 
 use List::Util qw(max);
 use JavaScript::Minifier::XS qw(minify);
 use Digest::MD5 qw(md5_hex);
 use File::Basename;
 use File::Slurp qw(read_file write_file);
+use JSON qw(to_json from_json);
 
 sub max_timestamp(@) { max map { (stat $_)[9] || 0 } @_ } # Obviously 9 is mtime
 
@@ -29,8 +30,6 @@ sub process_includes($;$) {
     }
     return ($blob, @deps);
 }
-
-use JSON qw(to_json from_json);
 
 sub hash {
     my ($config, $name) = @_;
